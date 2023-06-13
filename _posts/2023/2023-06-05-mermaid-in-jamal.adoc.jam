@@ -9,27 +9,32 @@ comments: on
 %}
 {%@sep 〔〕%}
 = Adding Mermaid Diagrams to Markdown Documents
-
-〔@maven:load com.javax0.jamal:jamal-io:2.1.0-SNAPSHOT〕
 〔@comment
+〔@maven:load com.javax0.jamal:jamal-io:2.1.0-SNAPSHOT〕
 〔#define CHART=flowchart TD
 A[Christmas] -->|Get money| B(Go shopping)
 B --> C{Let me think}
 C -->|One| D[Laptop]
 C -->|Two| E[iPhone]
-C -->|Three| F[fa:fa-car Care]
+C -->|Three| F[fa:fa-car Care ]
 〕
 〔#define KEY=〔#hashCode 〔CHART〕〕〕〔@define CREATE=true〕
-〔@try 〔#block〔#include images/〔KEY〕.svg〕〕〔@define CREATE=false〕〕
-〔#if `//`〔CREATE〕//
-〔#io:write (mkdir output="images/aaa.mmd") 〔CHART〕〕
+〔@options failfast〕
+〔@try 〔#block〔#include images/〔KEY〕.svg〕〕
+       〔@define CREATE=false〕
+〕
+after=〔CREATE〕 〔KEY〕\
+〔!#if `//`〔CREATE〕//
+〔@ident〔#io:write (mkdir output="images/aaa.mmd") 〔CHART〕〕
 〔#io:exec command="""mermaid
 -i
 images/aaa.mmd
 -o
 images/〔KEY〕.svg
 """ cwd="." error="convert.err.txt" output="convert.out.txt"
-〕//〕
+〕〕generated// cached〕
+
+image::images/〔KEY〕.svg[]
 〕
 
 Mermaid is a trendy diagramming tool.
@@ -249,8 +254,10 @@ If it is `false,` then it will do nothing.
 [source,jamal]
 ----
 {#define KEY={#hashCode {CHART}}}{@define CREATE=true}
+{@options failfast}
 {@try {#block{#include images/{KEY}.svg}}{@define CREATE=false}}
-{#if `//`{CREATE}//
+{!#if `//`{CREATE}//
+{@ident
 {#io:write (mkdir output="images/aaa.mmd") {CHART}}
 {#io:exec command="""mermaid
 -i
@@ -258,7 +265,7 @@ images/aaa.mmd
 -o
 images/{KEY}.svg
 """ cwd="." error="convert.err.txt" output="convert.out.txt"
-}//}
+}}//}
 ----
 
 For more details using these macros, please refer to the documentation.
