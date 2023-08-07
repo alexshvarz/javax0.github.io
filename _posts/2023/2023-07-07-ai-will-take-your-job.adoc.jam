@@ -1,7 +1,10 @@
 ---
-
-{%@define title=Will AI take your job?%} title: {%title%} layout: posta comments: on ---
-{%@import javax0.jim%}
+{%@define title=Will AI take your job?%}\
+title: {%title%}
+layout: posta
+comments: on
+---
+{%@import javax0.jim%}\
 {%@comment I am writing an article about the danger of AI and how it may take the jobs of people.
 I am not a native English speaker.
 The format of the text is ASCIIDOC markup.
@@ -16,7 +19,7 @@ Text, which is citation, or quotation from others must not be modified.
 Can you do that for me?
 
 =========================================================================================
-%}
+%}\
 {%@sep 〔〕%}
 = 〔title〕
 
@@ -67,29 +70,53 @@ This time, I employed an AI-enhanced grammar checker.
 The language editor made only one alteration to the entire chapter.
 Nevertheless, as a native speaker, one can still discern that English is not my first language.
 
-To improve that, I write this article, I request ChatGPT to assist me by saying, "Please rewrite the following paragraph in proper English."
-And it does.
+To improve that, I write this article, I request ChatGPT to assist me by saying, "Please rewrite the following paragraph in proper English." And it does.
 In this case, there is no job at risk, as I have never had the luxury of having an editor review my articles.
 Nonetheless, I hope the quality has improved.
 
-Writing articles is one example where AI can help eliminate the routine tasks.
-Let's have a look at another example: lawyers.
-Recently, the hype hollered that AI will replace lawyers, ChatGPT could pass the bar exam.
-Up until now, one could say, a lawyer is a person who passed the bar exam and acts as a lawyer.
-It was just as good a definition as "everything that flies is a bird" until airplanes were invented.
+Writing articles is indeed one area where AI can assist in eliminating routine tasks, and another example worth considering is the field of law.
+There has been recent hype suggesting that AI could replace lawyers, with claims that ChatGPT could even pass the bar exam.
+However, it is essential to reevaluate the definition of a lawyer in light of technological advancements.
 
-Now we should look at that definition again.
-Up until now, a significant part of the laywers work was knowing the law, finding relevant cases for references, and so on.
-This, however, was not the real value added part of the work.
-This could be done by assistants, paralegals.
-The real value is somewhere else.
+Previously, a lawyer could be defined as someone who passed the bar exam and practiced law.
+This definition was as valid as saying "everything that flies is a bird" until airplanes were invented.
 
-I cannot tell you where it is in the case of the lawyers, because I am not a lawyer.
-But I am certain that the most important part of the work is communication between humans.
-This will not be replaced by AI simply because an AI is not a human and never will be.
-We can talk to an AI, we may not even tell the difference, but most of the humans will not trust an AI to be their lawyer, doctor or some other profession where the stakes are high.
-It may change in the future, but this change will be gradual and slow, because it is motioned by the change of the perception of the people and not the technological advancement.
+Now, it is crucial to reconsider that definition.
+Traditionally, a significant part of a lawyer's work involved knowledge of the law, finding relevant cases for references, and similar tasks.
+However, this aspect of the work was not the primary source of value added.
+Such tasks could be performed by assistants or paralegals.
+The true value lies elsewhere.
 
+As a non-lawyer, I cannot pinpoint exactly where this value lies within the legal profession.
+Nonetheless, I am confident that the most critical aspect of their work is human communication.
+This element cannot be replaced by AI because AI is not human and never will be.
+While we can interact with AI and may not even notice the difference, most people would not trust an AI to be their lawyer, doctor, or any other profession where high stakes are involved.
+Any potential change in this regard would be gradual and slow, as it depends on people's perception rather than technological advancements.
+
+In summary, it is evident that short-term changes are inevitable.
+There will be shifts in the way we work, and certain jobs will gradually disappear.
+
+Moving forward, let's now shift our focus to the long term.
+
+〔section Long Term〕
+
+In the long term, AI is expected to become significantly more powerful.
+Presently, we have standalone AI tools that possess various limitations.
+However, as time progresses, many of these limitations are likely to diminish, and integration of AI applications will become more prevalent.
+
+Currently, I engage in a process where I copy and paste my basic sentences into ChatGPT for rewriting, and then transfer them back to my text editor.
+I already have two AI tools, Co-Pilot (a code completion tool) and Grazie (a grammar checker), integrated into my text editor.
+Looking ahead, it is foreseeable that I will be able to write directly within ChatGPT, with seamless integration into my text editor.
+
+What will be the consequences of the AI development considering jobs?
+Let's imagine a future, where AI is an advancement and can do 90% of what humans can do.
+
+When such technology changes happened in the past, the eliminated professions were replaced by new ones.
+We started agriculture and there was no need for hunters.
+Instead, we needed farmers.
+We invented the steam engine and there was no need for horses.
+Instead, we needed engineers.
+We invented the computer and there was no need for typists.
 
 
 
