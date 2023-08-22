@@ -43,7 +43,7 @@ It was 1999, and there was practically no social media.
 There were GeoCities (closed in 2009), Classmates.com (still exists), and SixDegrees.com (closed in 2000).
 
 The content management system was tailored to the needs of the editorial stuff.
-There was not much experience in the word what is needed for a newspaper like that.
+There was not much experience in the world what is needed for a newspaper like that.
 The development was very agile in the sense that the developer was sitting a few meters from the editorial stuff, and they were discussing the features and the developer was implementing them.
 It was not really organized, but it was a kind of wild west -- history.
 
