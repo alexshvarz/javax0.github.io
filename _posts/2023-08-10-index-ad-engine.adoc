@@ -12,4 +12,37 @@ comments: on
 == 1. Introduction
 
 In a previous article, I have already written about my programming career and how I became the CIO of index.hu in 1999.
-In this article, I will give some more insigth and some more details on how the ad engine was created.
+In this article, I will give some more insight and some more details on how the ad engine was created.
+
+== 2. The Original Solution 
+
+When I got to the position as CIO of index.hu there were a lot of things to do.
+The company wanted to grow fast, we needed to invest a lot into technology and organization.
+I had to build a team with developers, an operation.
+It was two years before the agile manifesto was created, but looking back to what we did was very agile.
+
+There were two teams of developers.
+One team was working on web page design.
+You could say that they were front-end developers, but at that time it was more like HTML only and no JavaScript.
+So essentially they were designers.
+The other team was working on the back-end.
+
+The main business of the company was publishing a news portal.
+It needed a content management system, advertisement engine and a user forum.
+The content management system and the forum were custom solutions created by a single developer in PHP, Apache and MySQL.
+It was a huge risk that I have inherited, and honestly, I did not realize it.
+However, it did not bite me during the lifetime of my being there, and it was pure luck.
+Looking at it from this distance, that guy could stand up and refuse to maintain the code, and we would have been in deep trouble.
+He did not, and even after I left the company, he was working on these solutions for a long time.
+
+The forum was a discussion forum.
+Just put it into perspective.
+It was 1999, and there was practically no social media.
+There were GeoCities (closed in 2009), Classmates.com (still exists), and SixDegrees.com (closed in 2000).
+
+https://forum.index.hu/ still exists, actively used by the users, and it still uses the original design and mainly the same features.
+
+The content management system was tailored to the needs of the editorial stuff.
+There was not much experience in the word what is needed for a newspaper like that.
+The development was very agile in the sense that the developer was sitting a few meters from the editorial stuff, and they were discussing the features and the developer was implementing them.
+It was not really organized, but it was a kind of wild west -- history.
