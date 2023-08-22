@@ -34,22 +34,34 @@ The main business of the company was publishing a news portal.
 It needed a content management system, advertisement engine and a user forum.
 The content management system and the forum were custom solutions created by a single developer in PHP, Apache and MySQL.
 It was a huge risk that I have inherited, and honestly, I did not realize it.
-However, it did not bite me during the lifetime of my being there, and it was pure luck.
+However, it did not bite me while I was there.
+It was pure luck.
 Looking at it from this distance, that guy could stand up and refuse to maintain the code, and we would have been in deep trouble.
 He did not, and even after I left the company, he was working on these solutions for a long time.
 
-The forum was a discussion forum.
+The forum is a discussion platform.
+I use present tense, because it is still there, and it is still used.
 Just put it into perspective.
 It was 1999, and there was practically no social media.
 There were GeoCities (closed in 2009), Classmates.com (still exists), and SixDegrees.com (closed in 2000).
-
-https://forum.index.hu/ still exists, actively used by the users, and it still uses the original design and mainly the same features.
 
 The content management system was tailored to the needs of the editorial stuff.
 There was not much experience in the word what is needed for a newspaper like that.
 The development was very agile in the sense that the developer was sitting a few meters from the editorial stuff, and they were discussing the features and the developer was implementing them.
 It was not really organized, but it was a kind of wild west -- history.
 
+We chose to create the content management system in-house, and it was a great strategy.
+When you run a business, you have to identify your core competencies.
+Sometimes it is trivial, sometimes it is less trivial.
+Running a new portal needs the best journalists and the best editors.
+The technical background for that is the best possible editorial system that can distinguish you from the competition.
+That way, the editorial system is a core competency.
+Developing it in-house was a great strategy.
+
+The actual reason behind the decision was that there were no usable or good enough solutions available, and we did not have the money to buy what was available at the time.
+
+The advertisement engine was a different story.
+There were no available solutions at that time at all.
 
 
 
