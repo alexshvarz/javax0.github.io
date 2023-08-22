@@ -1,0 +1,15 @@
+---
+
+title: The index.hu ad engine
+layout: posta
+comments: on
+---
+
+
+
+= The index.hu ad engine
+
+== 1. Introduction
+
+In a previous article, I have already written about my programming career and how I became the CIO of index.hu in 1999.
+In this article, I will give some more insigth and some more details on how the ad engine was created.

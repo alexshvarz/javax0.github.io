@@ -1,0 +1,18 @@
+---
+{%@define title=The index.hu ad engine%}
+title: {%title%}
+layout: posta
+comments: on
+---
+{%@import javax0.jim%}
+{%@comment
+
+=========================================================================================
+%}
+{%@sep 〔〕%}
+= 〔title〕
+
+〔section Introduction〕
+
+In a previous article, I have already written about my programming career and how I became the CIO of index.hu in 1999.
+In this article, I will give some more insigth and some more details on how the ad engine was created.
