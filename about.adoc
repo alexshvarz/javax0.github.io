@@ -4,6 +4,7 @@ title: About
 permalink: /about/
 ---
 
+
 == This is Javax0
 
 This is the new Javax0 blog.
