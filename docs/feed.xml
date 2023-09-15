@@ -1,80 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://javax0.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://javax0.github.io/" rel="alternate" type="text/html" /><updated>2023-09-15T16:45:06+02:00</updated><id>https://javax0.github.io/feed.xml</id><title type="html">Java Deep, mostly Java</title><subtitle>javax0 is a technical Java oriented blog. Whenever I find something interesting, in the mood and feel the power to publish it, you will get it here. Publications are usually released on Wednesday 15:00am GMT. Earlier posts of the blog were published on Javax0 Wordpress Site at https://javax0.wordpress.com</subtitle><entry><title type="html">What is source code?</title><link href="https://javax0.github.io/2023/09/14/what-is-source-code.html" rel="alternate" type="text/html" title="What is source code?" /><published>2023-09-14T00:00:00+02:00</published><updated>2023-09-14T00:00:00+02:00</updated><id>https://javax0.github.io/2023/09/14/what-is-source-code</id><content type="html" xml:base="https://javax0.github.io/2023/09/14/what-is-source-code.html">= What is source code?
-
-== 1. Introduction
-
-This article is about the definition of source code.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.1">Jekyll</generator><link href="https://javax0.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://javax0.github.io/" rel="alternate" type="text/html" /><updated>2023-09-15T16:47:07+02:00</updated><id>https://javax0.github.io/feed.xml</id><title type="html">Java Deep, mostly Java</title><subtitle>javax0 is a technical Java oriented blog. Whenever I find something interesting, in the mood and feel the power to publish it, you will get it here. Publications are usually released on Wednesday 15:00am GMT. Earlier posts of the blog were published on Javax0 Wordpress Site at https://javax0.wordpress.com</subtitle><entry><title type="html">What is source code?</title><link href="https://javax0.github.io/2023/09/14/what-is-source-code.html" rel="alternate" type="text/html" title="What is source code?" /><published>2023-09-14T00:00:00+02:00</published><updated>2023-09-14T00:00:00+02:00</updated><id>https://javax0.github.io/2023/09/14/what-is-source-code</id><content type="html" xml:base="https://javax0.github.io/2023/09/14/what-is-source-code.html">&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;1-introduction&quot;&gt;1. Introduction&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This article is about the definition of source code.
 Usually, this is straightforward, and there is no need for contemplating on this topic.
 Everybody knows what source code is.
 In some special cases, however, we may get confused and knowing what we are really doing may help avoid mistake.
 This is not a philosophical article.
-There is merit in knowing and understanding some of the rules we follow and to know when we deliberately break these rules and face the consequences.
-
-== 2. The story behind the issue
-
-In a project, we started to use GitLab and the CI/CD features of it.
-The description of the tasks should be given in a YAML file ``.gitlab-ci.yml``.
+There is merit in knowing and understanding some of the rules we follow and to know when we deliberately break these rules and face the consequences.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;2-the-story-behind-the-issue&quot;&gt;2. The story behind the issue&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In a project, we started to use GitLab and the CI/CD features of it.
+The description of the tasks should be given in a YAML file &lt;code&gt;.gitlab-ci.yml&lt;/code&gt;.
 We realized that the task descriptions, managing versions are redundant.
-They may appear elsewhere in the project, and we have to keep them in sync.
-
-I suggested to the team that we should use a single source of truth.
-To do that, we could use a Kotlin DSL file and use Gradle build to generate the YAML file.
-
-This solution would work, but it is not a clean solution.
-What is the problem with it?
-
-The problem is that it generates a file that describes the process, which indeed includes the generation of this description file.
-It is like a snake biting its tail.
-
-In practice, it works.
+They may appear elsewhere in the project, and we have to keep them in sync.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I suggested to the team that we should use a single source of truth.
+To do that, we could use a Kotlin DSL file and use Gradle build to generate the YAML file.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;This solution would work, but it is not a clean solution.
+What is the problem with it?&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The problem is that it generates a file that describes the process, which indeed includes the generation of this description file.
+It is like a snake biting its tail.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;In practice, it works.
 You can run the build on the developer machine, generate the YAML file, and then commit it to the repository along with the other source files.
 In this case, however, there is a mandatory part of the build running on the developer machine.
-It is against the idea of CI/CD that the build in its entirety should be run on the CI/CD server.
-
-The compromise I also applied in the Java::Geci project is that the
-
-* the tool is treated as a &quot;personal productivity tool&quot;, like an editor running on the developer machine, and
-
-* the same tool is used as a &quot;test tool&quot; that is run on the CI/CD server.
-
-When running on the developer machine as a standalone tool or as part of the build process, it will generate the CI/CD YAML.
+It is against the idea of CI/CD that the build in its entirety should be run on the CI/CD server.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The compromise I also applied in the Java::Geci project is that the&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;ulist&quot;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;the tool is treated as a &quot;personal productivity tool&quot;, like an editor running on the developer machine, and&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;the same tool is used as a &quot;test tool&quot; that is run on the CI/CD server.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;When running on the developer machine as a standalone tool or as part of the build process, it will generate the CI/CD YAML.
 When running on the CI/CD server, it will check that the YAML file is up-to-date.
 If the build life cycle contains the regeneration of the CI/CD YAML during the test phase, the standard test failure signals can be used to fail and stop a build.
 On the developer machine, the build can interactively be restarted.
 On the CI/CD server, the failure is a hard failure.
-This way the generated code is partially treated as source code.
-
-Is this a clean solution?
+This way the generated code is partially treated as source code.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Is this a clean solution?
 No.
 It is a workaround making the build process more complicated.
 Is it worth doing it?
-One should decide on a case-by-case basis.
-
-What would be the clean solution?
-I will answer that question at the end of this article in the takeaway section, but to get there and to understand the reasoning behind it, we have to go through some almost philosophical contemplation.
-
-What we have to answer is the following:
-
-== 3. What is source code?
-
-The problem with this question is that it is too simple.
+One should decide on a case-by-case basis.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What would be the clean solution?
+I will answer that question at the end of this article in the takeaway section, but to get there and to understand the reasoning behind it, we have to go through some almost philosophical contemplation.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;What we have to answer is the following:&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;3-what-is-source-code&quot;&gt;3. What is source code?&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The problem with this question is that it is too simple.
 We all know what source code is.
 We work with source code every day.
-That is the text file we edit, send to the compiler, store in version control databases, and so on.
+That is the text file we edit, send to the compiler, store in version control databases, and so on.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;Even ChatGPT will give an answer to this question.
+Not a good one, though, but a partially correct one.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;I do not copy it here because it is too long and boring, but in short, it says that source code is what the developer writes.
+It is text, readable, and ChatGPT also lists a lot of things that can characterize source code, but they have nothing to do with the essence.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sidebarblock&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;div class=&quot;paragraph&quot;&gt;
+&lt;p&gt;The most important trait of the source code is that it is edited by humans.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sect1&quot;&gt;
+&lt;h2 id=&quot;4-conclusion-and-takeaway&quot;&gt;4. Conclusion and Takeaway&lt;/h2&gt;
+&lt;div class=&quot;sectionbody&quot;&gt;
 
-Even ChatGPT will give an answer to this question.
-Not a good one, though, but a partially correct one.
-
-I do not copy it here because it is too long and boring, but in short, it says that source code is what the developer writes.
-It is text, readable, and ChatGPT also lists a lot of things that can characterize source code, but they have nothing to do with the essence.
-
-****
-The most important trait of the source code is that it is edited by humans.
-****
-
-
-
-
-== 4. Conclusion and Takeaway</content><author><name></name></author><summary type="html">1. Introduction</summary></entry><entry><title type="html">Programming with AI</title><link href="https://javax0.github.io/2023/08/28/ai-programming.html" rel="alternate" type="text/html" title="Programming with AI" /><published>2023-08-28T00:00:00+02:00</published><updated>2023-08-28T00:00:00+02:00</updated><id>https://javax0.github.io/2023/08/28/ai-programming</id><content type="html" xml:base="https://javax0.github.io/2023/08/28/ai-programming.html">= Programming with AI
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name></name></author><summary type="html">1. Introduction</summary></entry><entry><title type="html">Programming with AI</title><link href="https://javax0.github.io/2023/08/28/ai-programming.html" rel="alternate" type="text/html" title="Programming with AI" /><published>2023-08-28T00:00:00+02:00</published><updated>2023-08-28T00:00:00+02:00</updated><id>https://javax0.github.io/2023/08/28/ai-programming</id><content type="html" xml:base="https://javax0.github.io/2023/08/28/ai-programming.html">= Programming with AI
 
 == 1. Introduction
 
