@@ -51,6 +51,9 @@ The compromise I also applied in the Java::Geci project is that the
 When running on the developer machine as a standalone tool or as part of the build process, it will generate the CI/CD YAML.
 When running on the CI/CD server, it will check that the YAML file is up-to-date.
 If the build life cycle contains the regeneration of the CI/CD YAML during the test phase, the standard test failure signals can be used to fail and stop a build.
+If the generated Yaml file is the same as the one already there, the build is dandy.
+If it is different, the build fails.
+
 On the developer machine, the build can interactively be restarted.
 On the CI/CD server, the failure is a hard failure.
 This way the generated code is partially treated as source code.
@@ -70,20 +73,54 @@ What we have to answer is the following:
 
 The problem with this question is that it is too simple.
 We all know what source code is.
+
+It is like asking about the sun.
+What is the sun?
+Everybody knows what the sun is, and still, researchers are investigating it every day with huge budgets.
+
+The same is true for source code.
 We work with source code every day.
-That is the text file we edit, send to the compiler, store in version control databases, and so on.
+It rises from the keyboard at the start of the day and sets in the compiler after commit.
+It is the text file we edit, send to the compiler, store in version control databases, and so on.
 
-Even ChatGPT will give an answer to this question.
-Not a good one, though, but a partially correct one.
+What the source code does not usually do is controlling the execution of something.
+It goes to the compiler, and the compiler generates the executable.
 
-I do not copy it here because it is too long and boring, but in short, it says that source code is what the developer writes.
-It is text, readable, and ChatGPT also lists a lot of things that can characterize source code, but they have nothing to do with the essence.
+``.gitlab-ci.yml`` however does.
+It is a source code and "executable" at the same time.
+It is edited by the developer, stored in the version control.
+It behaves like a source code, therefore, it is source code.
+It is used to control the execution of the CI/CD process.
+It behaves as a (non-machine code) executable, therefore, it is executable.
 
-****
-The most important trait of the source code is that it is edited by humans.
-****
+This dual nature of the file is the reason for the issue.
 
+〔section Reason〕
 
+What is the reason for the issue?
 
+I cannot be absolutely certain, because I did not design the architecture of the GitLab pipeline engine.
+My guess is that the engineers considered different approaches and selected one that is the most efficient.
+
+The clean solution would be to have the definition of the build process somewhere else and not in the source repository.
+For the build process, this description is an executable, therefore, it has nothing to do with the source repository.
+Where could it be stored?
+It could be stored in a separate "data store".
+Reading the previous sentence again considering that in this case, the "data store" can be anything, it is clear that the obvious choice is a repository.
+It can be something like a Maven repository, Ivy repository, or any other repository that stores artifacts.
+It can even be a Git repository, which would be an obvious choice for GitLab.
+
+One could maintain the build describing ``.gitlab-ci.yml`` file in one repository as a source code.
+If it is maintained using a DSL, then the DLS file is the source code, and this repo has its own, presumably much simpler ``.gitlab-ci.yml``.
+The build process described in it would generate the target ``.gitlab-ci.yml`` and the last step would release and deploy it to the repository from where the CI/CD engine of the "real" project would read it.
+
+Why don't we have this clean solution?
+Because it is way too complex.
+People can go long miles manually editing redundant text file before deciding to insert another step into the development process.
+
+Every step is an abstraction, a layer of indirection, and a new script and process to maintain.
+99% of the cases, it is not worth it.
 
 〔section Conclusion and Takeaway〕
+
+
