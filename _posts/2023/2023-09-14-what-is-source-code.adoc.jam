@@ -50,7 +50,7 @@ The compromise I also applied in the Java::Geci project is that the
 
 When running on the developer machine as a standalone tool or as part of the build process, it will generate the CI/CD YAML.
 When running on the CI/CD server, it will check that the YAML file is up-to-date.
-If the build life cycle contains the regeneration of the CI/CD YAML during the test phase, the standard test failure signals can be used to fail and stop a build.
+If the build life cycle contains the regeneration and comparison of the CI/CD YAML during the test phase, the standard test failure signals can be used to fail and stop a build.
 If the generated Yaml file is the same as the one already there, the build is dandy.
 If it is different, the build fails.
 
@@ -59,7 +59,17 @@ On the CI/CD server, the failure is a hard failure.
 This way the generated code is partially treated as source code.
 
 Is this a clean solution?
-No.
+No, it is not.
+It violates the principle that the build should be the same on the developer machine and on the CI/CD server.
+It also violates the principle that the testing and the tested system should be separated.
+A system cannot test itself, or some part of it.
+Since the CI/CD YAML is part of the system, it should not run a test on itself.
+If the test fails, it is a clear signal of some error.
+On the other hand, if there is no error, it may mean
+
+* we are dandy, or
+* there is an error in the testing system, which is also the tested system.
+
 It is a workaround making the build process more complicated.
 Is it worth doing it?
 One should decide on a case-by-case basis.
