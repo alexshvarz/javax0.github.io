@@ -1,0 +1,187 @@
+---
+{%@define title=Make things simpler%}
+title: {%title%}
+layout: posta
+comments: on
+---
+{%@import javax0.jim%}
+{%@comment
+
+=========================================================================================
+%}
+{%@sep 〔〕%}
+= 〔title〕
+
+〔section Introduction〕
+
+Recently, I had the opportunity to discuss Jamal at a JUG conference in Luzerne, presenting to an intimate audience.
+Their engagement was evident—they listened intently and participated actively, posing several questions.
+Some inquiries were particularly challenging, prompting me to confront the reasons why my pet project, Jamal, hasn't achieved the momentum I had anticipated.
+In this article, I will share the insights gained from this experience."
+
+
+〔subsection Background Story〕
+
+Before diving into the main narrative and the lessons learned, allow me to share a related side story.
+Although it's not directly connected, it provides valuable context.
+
+In the 1990s, I was employed by Digital Equipment Corporation (DEC), during a time when the internet was still in its nascent stages.
+Home connections were primarily made through dial-up modems, typically operating at speeds of 28.8 kbps.
+To put that in perspective, downloading a 2GB movie could take upwards of 50 days.
+
+DEC was developing a product capable of transferring data via the coaxial cables used for TV signals.
+These cables, with their 6MHz bandwidth, were not only capable of carrying TV broadcasts but could also facilitate data transfer.
+This method was significantly faster than the traditional dial-up modem.
+
+In December 1995, we showcased this product in Budapest, in collaboration with the cable TV company owned by the municipal government of district V.
+Despite initial challenges with cable quality and noise interference, we managed to set up the system for demonstration.
+Our goal was to highlight the impressive data transfer speed of 5Mbps.
+
+For the demonstration, we chose to download a movie from one server to another, in front of an audience comprised of technical journalists and experts.
+The presentation and demonstration focused on showcasing the speed of data transfer by streaming video.
+We were pleased with the outcome until we encountered the first question:
+
+> So you can transfer video over the cable TV?
+Isn't that precisely what cable TVs are designed for?
+What exactly is the innovation here?
+
+
+That question felt like a metaphorical truck hit us.
+In our pursuit of technical excellence, we had overlooked the importance of articulating the business value.
+Moreover, our choice of demonstration, while technically impressive, was easily misunderstood as redundant.
+
+This experience was a profound learning moment, one that parallels my journey with Jamal.
+
+
+〔section What is Jamal〕
+
+Before diving deeper into the story, let me briefly introduce Jamal.
+
+Jamal is a software tool designed to keep your documents up to date, especially useful for technical documentation.
+It automates the process of updating documents with references to the system being documented, allowing you to fetch many of these references directly from the system itself.
+Essentially, Jamal eliminates the manual task of copying information from the system to the document.
+
+At its core, Jamal is a meta-markup language.
+You use this language to specify:
+
+* The source of the information,
+* The method for extracting it,
+* The insertion point in the document, and
+* The formatting guidelines.
+
+The information source could be a file, database, webpage, or even a web service, though it is typically a file.
+
+A common use case is inserting a code sample from the source code into a document.
+You define the file containing the code sample, specify the start and end points, and set the formatting.
+This ensures that when your source code changes—whether during application development or documentation updates—you can refresh the document with a single command.
+This method guarantees accuracy, eliminating the risk of missing dependent changes when copying modifications manually.
+For example, if you rename or refactor a method for clarity, any related code in different parts of the document is automatically updated.
+
+Jamal is compatible with any markup language of your choice, being entirely opaque to the markup.
+It has been tested with AsciiDoc, Markdown, and reStructuredText, and is even compatible with DOCX files.
+
+For those editing in Markdown or AsciiDoc, the preview feature of your editor allows you to see the results in real-time.
+For instance, IntelliJ IDEA users can benefit from a plugin that renders AsciiDoc, with Jamal integrated to work interactively.
+Changes in the code are reflected immediately when you switch back to the document.
+
+Moreover, Jamal integrates seamlessly with Maven, both as a plugin and an extension, and can be included in your JavaDoc.
+It supports over 200 macros for various data sources and formatting options and features an interactive debugger to troubleshoot your meta-markup.
+
+I have personally used Jamal to write my books and maintain this blog.
+
+In summary, Jamal is a technically robust, versatile, and invaluable tool.
+Despite its utility, it has not yet achieved the visibility or momentum I had anticipated.
+Let's explore the current state of its momentum.
+
+〔section Momentum of Jamal〕
+
+Receiving feedback while developing an open-source tool can be a rare occurrence.
+Users might extensively utilize the tool or ignore it entirely, often without providing any feedback.
+Most of the input comes from users who encounter difficulties or are initially unsure how to leverage the tool effectively.
+Ironically, if you're seeking abundant feedback, creating simple software riddled with bugs seems to be a surefire strategy.
+
+Another metric for gauging interest and recognition is the number of stars a project receives on GitHub.
+For instance, https://github.com/verhas/jamal[Jamal] has garnered 53 stars.
+In contrast, https://github.com/verhas/License3j[License3j], a much older yet simpler project of mine, has achieved 531 stars.
+License3j is essentially a library for managing electronically signed key-value pairs that represent software licenses.
+
+When considering a more recent project, https://github.com/sourcebuddy/sourcebuddy[SourceBuddy] has collected 138 stars.
+It serves as a convenient front-end for the Java compiler API, illustrating its utility despite its simplicity.
+
+It's important to note that these comparisons are made within the context of my own projects.
+Drawing comparisons to behemoths like JUnit or Spring would be impractical, as Jamal operates in a completely different league and category from these widely recognized projects.
+
+The disparity in stars suggests that while there is a need for tools like License3j and SourceBuddy, and they are indeed used, Jamal has not yet found its footing or widespread appeal among its intended audience.
+
+Why does the limited traction of Jamal weigh so heavily on me?
+The answer lies in the considerable effort and expectation I've invested in it.
+Jamal was crafted to streamline the management of technical documents, a solution born from my own needs and challenges.
+It simplified my workflow significantly and enhanced the quality of the documents I produced.
+Naturally, I anticipated it would offer similar benefits to others.
+
+The apparent lack of momentum for Jamal has become a source of frustration, prompting me to delve into the potential reasons behind it.
+One hypothesis is the inherent complexity of Jamal.
+Utilizing Jamal requires an initial investment of effort beyond that of traditional documentation processes.
+Its advantages become most apparent in the long term, particularly during document maintenance when changes become necessary.
+However, it seems that many projects settle for less-than-ideal documentation quality, a reality that is equally troubling.
+
+This observation is not just a personal grievance.
+The industry at large recognizes the importance of high-quality documentation, yet often falls short in practice.
+I am not alone in my concerns.
+There is a growing movement within the technical community, as highlighted by https://www.writethedocs.org/[Write the Docs], advocating for a "documentation as code" approach.
+This methodology favors markup languages over traditional WYSIWYG editors and integrates documentation processes into the software build cycle, aligning closely with the philosophy behind Jamal.
+
+Beyond the personal disappointment, the scant usage and feedback for Jamal present a pragmatic challenge.
+Without user input, my ability to discern and respond to the actual needs of the users is significantly diminished.
+This lack of interaction restricts my opportunity to refine and evolve Jamal in ways that would make it more valuable and user-friendly for its intended audience.
+
+
+〔section The Demo Session in Luzerne〕
+
+During a recent demonstration in Luzern, I had the opportunity to present Jamal to a group of technical professionals, primarily Java developers, some of whom I had met on previous occasions.
+
+I began by showcasing the simplicity of installing Jamal for users of IntelliJ IDEA, followed by a tour of its capabilities.
+I demonstrated how Jamal could seamlessly integrate a code snippet from a file into an AsciiDoc document, automate the numbering of chapters, lines, and pictures, and facilitate the repetition of text with variations through macros.
+I even highlighted the PROG macro module, which introduces programming functionality into documents via a safe BASIC interpreter, effectively illustrating Jamal's limitless potential.
+Essentially, I positioned Jamal as a Turing complete programming language tailored for document creation.
+
+The audience, comprised of Swiss and German individuals, is part of a culture I deeply respect for its directness.
+While some might perceive this communication style as blunt, I find it incredibly efficient.
+It's a reminder that their straightforwardness isn't intended as an offense but as a means to offer clear and honest feedback.
+
+And clear, honest feedback was precisely what I received.
+
+One German attendee candidly shared his view that Jamal, despite its innovative approach and technical sophistication, was too complex for his liking.
+He acknowledged understanding the philosophy, the technical solutions, the syntax, and its optimization for document handling.
+Yet, he concluded that its complexity was a barrier to adoption for his projects.
+
+Standing there, absorbing his feedback, was not easy, but I found myself in agreement.
+This interaction, challenging as it was, aligned with the modest number of stars on GitHub, underscoring a coherent message about Jamal's reception in the community.
+
+〔section What to Do?〕
+
+Faced with the candid feedback about Jamal's complexity, I stand at a crossroads.
+Abandoning the project is an option, yet the very act of writing this article signifies my unwillingness to take that path.
+The alternative?
+To double down on marketing efforts to spark further engagement and to leverage the feedback received at the conference to streamline Jamal's usability.
+
+I remain convinced that the core structure and architecture of Jamal are as streamlined as possible, balancing simplicity with functionality.
+The essence of Jamal, transforming input text into output text instead of modifying the text you edit, embodies the "Write the Doc" philosophy and Jamal's foundational principles.
+The distinction between human-generated source code, whether for programs or documentation, and computer-generated output is a cornerstone of this philosophy.
+Introducing editorial tools that blur this distinction would diverge from the intended path.
+
+Efforts to enhance Jamal's user-friendliness have been substantial.
+Features like interactive editing, an integrated debugger, and compatibility with various editors and CI/CD tools were all designed to minimize the learning curve and maximize efficiency.
+
+Yet, there's always room for improvement, particularly in making macros more accessible.
+Inspired by the conference feedback, I found myself working late into the night upon my return home, developing a https://github.com/verhas/jamal/blob/master/jamal-snippet/README.adoc#variation[new macro] designed for ease of use.
+This initiative is just the beginning, and I plan to delve deeper into this topic in a future article.
+
+With your support, I am committed to evolving Jamal, making it not only a powerful tool but also an accessible one for a broader audience.
+The journey of Jamal is far from over, and your feedback is the beacon guiding its course.
+
+
+〔section Summary and Takeaway〕
+
+What can you learn about this story?
+
